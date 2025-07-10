@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>알록달록테이블</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Firebase/Google Sheets 등 외부 DB 연동 <script> 태그 제거됨 -->
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img src="images/logo.png" alt="알록달록테이블 로고" class="logo-img-small">
+                알록달록테이블
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">홈</a></li>
+                <li><a href="#about">소개</a></li>
+                <li><a href="#classes">수업프로그램</a></li>
+                <li><a href="#reservation">예약</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-decoration"></div>
+        <div class="hero-decoration"></div>
+        <div class="hero-decoration"></div>
+        <div class="hero-decoration"></div>
+        <div class="hero-content">
+            <img src="images/logo.png" alt="알록달록테이블 메인 로고" class="logo-img-large">
+            <h1>알록달록테이블</h1>
+            <p>여수 9년 경력 베이킹 전문 수업 아카데미</p>
+            <a href="#reservation" class="reservation-btn">예약하기</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">수업 사진</h2>
+            <div class="store-gallery">
+                <div class="slider-container" id="slider-store1">
+                    <div class="slider">
+                        <div class="slide"><img src="images/store1.jpg/KakaoTalk_20250610_231037858.jpg" alt="수업 사진1" class="store-image"></div>
+                        <div class="slide"><img src="images/store1.jpg/KakaoTalk_20250610_231034936.jpg" alt="수업 사진2" class="store-image"></div>
+                        <div class="slide"><img src="images/store1.jpg/KakaoTalk_20250610_231031236.jpg" alt="수업 사진3" class="store-image"></div>
+                        <div class="slide"><img src="images/store1.jpg/KakaoTalk_20250610_231027813.jpg" alt="수업 사진4" class="store-image"></div>
+                        <div class="slide"><img src="images/store1.jpg/KakaoTalk_20250610_231024739.jpg" alt="수업 사진5" class="store-image"></div>
+                    </div>
+                    <button class="slider-btn prev" onclick="prevSlide('store1')">❮</button>
+                    <button class="slider-btn next" onclick="nextSlide('store1')">❯</button>
+                    <div class="slider-dots" id="dots-store1"></div>
+                </div>
+            </div>
+
+            <h2 class="section-title">매장 전경</h2>
+            <div class="store-gallery">
+                <div class="slider-container" id="slider-store2">
+                    <div class="slider">
+                        <div class="slide"><img src="images/store2.jpg/KakaoTalk_20250610_230935176.jpg" alt="매장 전경1" class="store-image"></div>
+                        <div class="slide"><img src="images/store2.jpg/KakaoTalk_20250610_230954894.jpg" alt="매장 전경2" class="store-image"></div>
+                        <div class="slide"><img src="images/store2.jpg/KakaoTalk_20250610_230946624.jpg" alt="매장 전경3" class="store-image"></div>
+                    </div>
+                    <button class="slider-btn prev" onclick="prevSlide('store2')">❮</button>
+                    <button class="slider-btn next" onclick="nextSlide('store2')">❯</button>
+                    <div class="slider-dots" id="dots-store2"></div>
+                </div>
+            </div>
+
+            <h2 class="section-title">제품 사진</h2>
+            <div class="store-gallery">
+                <div class="slider-container" id="slider-store3">
+                    <div class="slider">
+                        <div class="slide"><img src="images/store3.jpg/KakaoTalk_20250610_230909124.jpg" alt="제품 사진1" class="store-image"></div>
+                        <div class="slide"><img src="images/store3.jpg/KakaoTalk_20250610_230905528.jpg" alt="제품 사진2" class="store-image"></div>
+                        <div class="slide"><img src="images/store3.jpg/KakaoTalk_20250610_230902306.jpg" alt="제품 사진3" class="store-image"></div>
+                        <div class="slide"><img src="images/store3.jpg/KakaoTalk_20250610_230855946.jpg" alt="제품 사진4" class="store-image"></div>
+                        <div class="slide"><img src="images/store3.jpg/KakaoTalk_20250610_230851989.jpg" alt="제품 사진5" class="store-image"></div>
+                        <div class="slide"><img src="images/store3.jpg/KakaoTalk_20250610_230849004.jpg" alt="제품 사진6" class="store-image"></div>
+                        <div class="slide"><img src="images/store3.jpg/KakaoTalk_20250610_230845624.jpg" alt="제품 사진7" class="store-image"></div>
+                        <div class="slide"><img src="images/store3.jpg/KakaoTalk_20250610_230841084.jpg" alt="제품 사진8" class="store-image"></div>
+                        <div class="slide"><img src="images/store3.jpg/KakaoTalk_20250610_230837986.jpg" alt="제품 사진9" class="store-image"></div>
+                        <div class="slide"><img src="images/store3.jpg/KakaoTalk_20250610_230833406.jpg" alt="제품 사진10" class="store-image"></div>
+                        <div class="slide"><img src="images/store3.jpg/KakaoTalk_20250610_230829189.jpg" alt="제품 사진11" class="store-image"></div>
+                        <div class="slide"><img src="images/store3.jpg/KakaoTalk_20250610_230823746.jpg" alt="제품 사진12" class="store-image"></div>
+                        <div class="slide"><img src="images/store3.jpg/KakaoTalk_20250610_230820149.jpg" alt="제품 사진13" class="store-image"></div>
+                        <div class="slide"><img src="images/store3.jpg/KakaoTalk_20250610_230816884.jpg" alt="제품 사진14" class="store-image"></div>
+                        <div class="slide"><img src="images/store3.jpg/KakaoTalk_20250610_230813009.jpg" alt="제품 사진15" class="store-image"></div>
+                        <div class="slide"><img src="images/store3.jpg/KakaoTalk_20250610_230809694.jpg" alt="제품 사진16" class="store-image"></div>
+                    </div>
+                    <button class="slider-btn prev" onclick="prevSlide('store3')">❮</button>
+                    <button class="slider-btn next" onclick="nextSlide('store3')">❯</button>
+                    <div class="slider-dots" id="dots-store3"></div>
+                </div>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-item">
+                    <h3>주소</h3>
+                    <p><a href="https://naver.me/5noi3nVL" target="_blank" rel="noopener noreferrer">전남 여수시 신기동 108-3 2층 알록달록테이블</a></p>
+                </div>
+                <div class="info-item">
+                    <h3>영업시간</h3>
+                    <p>100% 예약제</p>
+                </div>
+                <div class="info-item">
+                    <h3>연락처</h3>
+                    <p>전화: 010-7574-5612</p>
+                    <p>카카오톡 ID: Colorfultabe</p>
+                    <p>카카오톡 채널: 알록달록테이블</p>
+                    <p>인스타그램: @colorful_table</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="classes" class="classes">
+        <div class="container">
+            <h2>수업 프로그램</h2>
+            <p class="classes-intro">마카롱, 휘낭시에, 까불이 오란다, 쿠키, 케이크 등 다양한 제과 제빵 제품을 직접 만드실 수 있는 경험을 제공해드리고 있습니다.</p>
+            <p class="classes-intro">개인별 예약제 원데이 클래스는 물론 학교나 기관 단체 수업과 출강 수업 또한 진행하고 있습니다.</p>
+            
+            <div class="classes-grid">
+                <div class="class-card">
+                    <div class="class-image">
+                        <img src="images/store3.jpg/KakaoTalk_20250610_230905528.jpg" alt="딸기모찌 컵케이크">
+                    </div>
+                    <div class="class-content">
+                        <h3>딸기모찌 컵케이크</h3>
+                        <p>부드러운 모찌와 신선한 딸기가 어우러진 특별한 컵케이크를 만들어보세요.</p>
+                    </div>
+                </div>
+
+                <div class="class-card">
+                    <div class="class-image">
+                        <img src="images/store3.jpg/KakaoTalk_20250610_230902306.jpg" alt="까눌레">
+                    </div>
+                    <div class="class-content">
+                        <h3>까눌레</h3>
+                        <p>프랑스 전통 디저트 까눌레의 바삭한 겉면과 부드러운 속살을 완벽하게 구워내는 비법을 배워보세요.</p>
+                    </div>
+                </div>
+
+                <div class="class-card">
+                    <div class="class-image">
+                        <img src="images/store3.jpg/KakaoTalk_20250610_230855946.jpg" alt="스콘">
+                    </div>
+                    <div class="class-content">
+                        <h3>스콘</h3>
+                        <p>영국식 전통 스콘을 직접 만들어보세요. 버터의 풍미가 가득한 촉촉하고 바삭한 스콘입니다.</p>
+                    </div>
+                </div>
+
+                <div class="class-card">
+                    <div class="class-image">
+                        <img src="images/store3.jpg/KakaoTalk_20250610_230851989.jpg" alt="마카롱">
+                    </div>
+                    <div class="class-content">
+                        <h3>마카롱</h3>
+                        <p>색색깔의 아름다운 마카롱을 만들어보세요. 완벽한 꼬끄 만들기부터 다양한 필링까지!</p>
+                    </div>
+                </div>
+
+                <div class="class-card">
+                    <div class="class-image">
+                        <img src="images/store3.jpg/KakaoTalk_20250610_230849004.jpg" alt="휘낭시에">
+                    </div>
+                    <div class="class-content">
+                        <h3>휘낭시에</h3>
+                        <p>금괴 모양의 프랑스 전통 과자 휘낭시에. 아몬드 가루의 고소함과 버터의 깊은 맛을 느껴보세요.</p>
+                    </div>
+                </div>
+
+                <div class="class-card">
+                    <div class="class-image">
+                        <img src="images/store3.jpg/KakaoTalk_20250610_230845624.jpg" alt="케이크">
+                    </div>
+                    <div class="class-content">
+                        <h3>데코레이션 케이크</h3>
+                        <p>특별한 날을 위한 아름다운 케이크 만들기. 시트부터 크림, 데코레이션까지 완벽하게!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="classes-info">
+                <div class="info-card">
+                    <h3>📚 수업 안내</h3>
+                    <ul>
+                        <li>모든 재료와 도구는 제공됩니다</li>
+                        <li>완성된 작품은 모두 가져가실 수 있습니다</li>
+                        <li>개인별 맞춤 지도로 초보자도 안심!</li>
+                    </ul>
+                </div>
+                
+                <div class="info-card">
+                    <h3>👥 단체 수업</h3>
+                    <ul>
+                        <li>학교 및 기관 단체 수업 가능</li>
+                        <li>출장 수업도 진행합니다</li>
+                        <li>생일파티, 모임 등 특별한 날 수업</li>
+                    </ul>
+                </div>
+                
+                <div class="info-card">
+                    <h3>📱 더 많은 정보</h3>
+                    <p>자세한 클래스 진행 사진이나 제품 디자인은 인스타그램에서 확인하실 수 있습니다.</p>
+                    <a href="https://www.instagram.com/colorful_table" target="_blank" class="instagram-link">
+                        📷 @colorful_table 팔로우하기
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reservation" class="reservation">
+        <div class="container">
+            <h2 class="section-title">수업 예약</h2>
+            <div class="reservation-container">
+                <div class="reservation-info">
+                    <h3>예약 안내</h3>
+                    <div class="info-item">
+                        <h4>📍 위치</h4>
+                        <p><a href="https://naver.me/5noi3nVL" target="_blank" rel="noopener noreferrer">전남 여수시 신기동 108-3 2층 알록달록테이블</a></p>
+                    </div>
+                    <div class="info-item">
+                        <h4>⏰ 운영시간</h4>
+                        <p>100% 예약제 운영</p>
+                        <p>매일 10:00 - 22:00</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>📞 연락처</h4>
+                        <p>전화: 010-7574-5612</p>
+                        <p>카카오톡 ID: Colorfultabe</p>
+                        <p>인스타그램: @colorful_table</p>
+                    </div>
+                </div>
+                
+                <div class="reservation-form-container">
+                    <form id="reservationForm" class="reservation-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">예약자 성명 <span class="required">*</span></label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">전화번호 <span class="required">*</span></label>
+                                <input type="tel" id="phone" name="phone" placeholder="010-0000-0000" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">이메일 (선택)</label>
+                            <input type="email" id="email" name="email" placeholder="example@email.com">
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="date">희망 날짜 <span class="required">*</span></label>
+                                <input type="date" id="date" name="date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="people">인원</label>
+                                <input type="text" id="people" name="people" placeholder="예: 2명" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="class">수업 종류 <span class="required">*</span></label>
+                            <select id="class" name="class" required onchange="toggleCustomClass()">
+                                <option value="">수업을 선택해주세요</option>
+                                <option value="딸기모찌 컵케이크">딸기모찌 컵케이크</option>
+                                <option value="까눌레">까눌레</option>
+                                <option value="스콘">스콘</option>
+                                <option value="마카롱">마카롱</option>
+                                <option value="휘낭시에">휘낭시에</option>
+                                <option value="케이크">케이크</option>
+                                <option value="기타">기타 (직접 입력)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group" id="customClassGroup" style="display: none;">
+                            <label for="customClass">기타 수업 내용</label>
+                            <input type="text" id="customClass" name="customClass" placeholder="원하시는 수업을 입력해주세요">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">문의내용</label>
+                            <textarea id="message" name="message" rows="4" placeholder="추가 요청사항이나 문의사항을 적어주세요"></textarea>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="privacy" name="privacy" required>
+                                <span class="checkmark"></span>
+                                개인정보 수집 및 이용에 동의합니다 <span class="required">*</span>
+                            </label>
+                            <div class="privacy-details">
+                                <p><strong>수집 항목:</strong> 성명, 전화번호, 이메일(선택), 수업 관련 정보</p>
+                                <p><strong>수집 목적:</strong> 수업 예약 및 상담, 서비스 제공</p>
+                                <p><strong>보유 기간:</strong> 서비스 제공 완료 후 1년</p>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">예약 신청하기</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>알록달록테이블</h3>
+                    <p>전남 여수시 신기동 108-3 2층</p>
+                    <p>전화: 010-7574-5612</p>
+                </div>
+                <div class="footer-social">
+                    <h3>소셜 미디어</h3>
+                    <p>카카오톡: Colorfultabe</p>
+                    <p>인스타그램: @colorful_table</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 알록달록테이블. All rights reserved.</p>
+                <button id="adminBtn" class="admin-btn" onclick="showAdminLogin()">관리자 페이지</button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 관리자 로그인 모달 -->
+    <div id="adminModal" class="admin-modal">
+        <div class="admin-modal-content">
+            <span class="admin-close" onclick="closeAdminModal()">&times;</span>
+            <h2>관리자 로그인</h2>
+            <form id="adminLoginForm" onsubmit="adminLogin(event)">
+                <div class="form-group">
+                    <label for="adminPassword">비밀번호</label>
+                    <input type="password" id="adminPassword" required>
+                </div>
+                <button type="submit" class="admin-login-btn">로그인</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <!-- 아래 submit 이벤트 등록 <script>는 삭제 -->
+</body>
+</html> 

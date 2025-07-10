@@ -1,0 +1,1039 @@
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff5f5;
+    color: #333;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #ff6b6b;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ff6b6b;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(135deg, #fff5f5 0%, #ffeaa7 50%, #fff5f5 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 20% 20%, #ff6b6b 2px, transparent 2px),
+        radial-gradient(circle at 80% 80%, #ffeaa7 2px, transparent 2px),
+        radial-gradient(circle at 40% 60%, #ff9ff3 2px, transparent 2px),
+        radial-gradient(circle at 60% 30%, #74b9ff 2px, transparent 2px);
+    background-size: 100px 100px, 150px 150px, 200px 200px, 120px 120px;
+    background-position: 0 0, 30px 30px, 70px 70px, 150px 150px;
+    opacity: 0.1;
+    animation: float 20s ease-in-out infinite;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        /* 도넛 모양들 */
+        radial-gradient(circle at 15% 25%, transparent 15px, #ff6b6b 16px, #ff6b6b 18px, transparent 19px),
+        radial-gradient(circle at 85% 75%, transparent 12px, #ffeaa7 13px, #ffeaa7 15px, transparent 16px),
+        radial-gradient(circle at 30% 80%, transparent 10px, #ff9ff3 11px, #ff9ff3 13px, transparent 14px),
+        radial-gradient(circle at 70% 20%, transparent 14px, #74b9ff 15px, #74b9ff 17px, transparent 18px);
+    background-size: 300px 300px, 250px 250px, 400px 400px, 350px 350px;
+    opacity: 0.05;
+    animation: rotate 30s linear infinite;
+}
+
+/* 베이커리 데코레이션 요소들 */
+.hero-decoration {
+    position: absolute;
+    pointer-events: none;
+}
+
+.hero-decoration::before,
+.hero-decoration::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+}
+
+/* 컵케이크 1 */
+.hero-decoration:nth-child(1) {
+    top: 10%;
+    left: 10%;
+    width: 30px;
+    height: 40px;
+    background: linear-gradient(to bottom, #ff6b6b 0%, #ff6b6b 60%, #ffeaa7 60%, #ffeaa7 100%);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    opacity: 0.3;
+    animation: bounce 4s ease-in-out infinite;
+}
+
+.hero-decoration:nth-child(1)::before {
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8px;
+    height: 8px;
+    background: #ff9ff3;
+}
+
+/* 컵케이크 2 */
+.hero-decoration:nth-child(2) {
+    top: 20%;
+    right: 15%;
+    width: 25px;
+    height: 35px;
+    background: linear-gradient(to bottom, #ff9ff3 0%, #ff9ff3 60%, #74b9ff 60%, #74b9ff 100%);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    opacity: 0.3;
+    animation: bounce 3s ease-in-out infinite 1s;
+}
+
+.hero-decoration:nth-child(2)::before {
+    top: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background: #ffeaa7;
+}
+
+/* 도넛 */
+.hero-decoration:nth-child(3) {
+    bottom: 20%;
+    left: 20%;
+    width: 40px;
+    height: 40px;
+    background: #ffeaa7;
+    border-radius: 50%;
+    opacity: 0.25;
+    animation: float 6s ease-in-out infinite;
+}
+
+.hero-decoration:nth-child(3)::before {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 15px;
+    height: 15px;
+    background: transparent;
+    border: 8px solid #fff5f5;
+    border-radius: 50%;
+}
+
+/* 빵 모양 */
+.hero-decoration:nth-child(4) {
+    bottom: 15%;
+    right: 25%;
+    width: 35px;
+    height: 20px;
+    background: #ffeaa7;
+    border-radius: 50px;
+    opacity: 0.3;
+    animation: bounce 5s ease-in-out infinite 2s;
+}
+
+.hero-decoration:nth-child(4)::before {
+    top: 2px;
+    left: 8px;
+    width: 4px;
+    height: 4px;
+    background: #ff6b6b;
+    border-radius: 50%;
+}
+
+.hero-decoration:nth-child(4)::after {
+    top: 2px;
+    right: 8px;
+    width: 4px;
+    height: 4px;
+    background: #ff6b6b;
+    border-radius: 50%;
+}
+
+/* 애니메이션 */
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0px) scale(1); }
+    50% { transform: translateY(-15px) scale(1.05); }
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 3rem;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    color: #ff6b6b;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: #666;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* About Section */
+.about {
+    padding: 5rem 0;
+    background-color: white;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.info-item {
+    background: #fff5f5;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.info-item h3 {
+    color: #ff6b6b;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.info-item p {
+    margin: 0.5rem 0;
+}
+
+/* Classes Section */
+.classes {
+    padding: 7rem 0;
+    background-color: #fff5f5;
+}
+
+.classes h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #ff6b6b;
+    margin-bottom: 2rem;
+}
+
+.classes-intro {
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    color: #666;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.classes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin: 4rem 0;
+}
+
+.class-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.class-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.class-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.class-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.class-card:hover .class-image img {
+    transform: scale(1.05);
+}
+
+.class-overlay {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255, 107, 107, 0.9);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.class-content {
+    padding: 1.5rem;
+}
+
+.class-content h3 {
+    color: #ff6b6b;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.class-content p {
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    color: #666;
+}
+
+.class-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.class-level {
+    background: #f8f9fa;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.class-price {
+    font-weight: bold;
+    color: #ff6b6b;
+    font-size: 1.1rem;
+}
+
+.classes-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.info-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.info-card h3 {
+    color: #ff6b6b;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.info-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.info-card li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f0f0f0;
+    color: #666;
+}
+
+.info-card li:last-child {
+    border-bottom: none;
+}
+
+.info-card li:before {
+    content: "✓";
+    color: #ff6b6b;
+    margin-right: 0.5rem;
+    font-weight: bold;
+}
+
+.instagram-link {
+    display: inline-block;
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    margin-top: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.instagram-link:hover {
+    transform: translateY(-2px);
+}
+
+.classes p {
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+/* Reservation Section */
+.reservation {
+    padding: 5rem 0;
+    background-color: white;
+}
+
+.reservation-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    margin-top: 3rem;
+}
+
+.reservation-info {
+    background: #fff5f5;
+    padding: 2rem;
+    border-radius: 15px;
+    height: fit-content;
+}
+
+.reservation-info h3 {
+    color: #ff6b6b;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+}
+
+.reservation-info .info-item {
+    margin-bottom: 2rem;
+}
+
+.reservation-info h4 {
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.reservation-form-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.reservation-form {
+    max-width: 100%;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.required {
+    color: #ff6b6b;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #ff6b6b;
+}
+
+.checkbox-group {
+    margin: 2rem 0;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: auto;
+    margin-right: 0.5rem;
+    margin-top: 0.2rem;
+}
+
+.privacy-details {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.privacy-details p {
+    margin: 0.5rem 0;
+}
+
+.submit-btn {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.submit-btn:hover {
+    background-color: #ff5252;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 3rem 0 1rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-info h3,
+.footer-social h3 {
+    color: #ff6b6b;
+    margin-top: 0;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Reservation Button */
+.reservation-btn {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 2rem;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.reservation-btn:hover {
+    background-color: #ff5252;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .reservation-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .reservation-info,
+    .reservation-form-container {
+        padding: 1.5rem;
+    }
+    
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-content {
+        padding: 2rem;
+        margin: 1rem;
+    }
+    
+    .hero-content p {
+        font-size: 1rem;
+    }
+    
+    /* 모바일에서 베이커리 데코레이션 크기 조정 */
+    .hero-decoration:nth-child(1),
+    .hero-decoration:nth-child(2) {
+        width: 20px;
+        height: 25px;
+    }
+    
+    .hero-decoration:nth-child(3) {
+        width: 25px;
+        height: 25px;
+    }
+    
+    .hero-decoration:nth-child(4) {
+        width: 25px;
+        height: 15px;
+    }
+    
+    .hero-decoration:nth-child(1)::before {
+        width: 5px;
+        height: 5px;
+    }
+    
+    .hero-decoration:nth-child(2)::before {
+        width: 4px;
+        height: 4px;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+    
+    /* Mobile Responsive for Classes */
+    .classes-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin: 2rem 0;
+    }
+    
+    .class-card {
+        margin: 0 1rem;
+    }
+    
+    .classes-info {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+    
+    .info-card {
+        margin: 0 1rem;
+        padding: 1.5rem;
+    }
+    
+    .classes h2 {
+        font-size: 2rem;
+    }
+    
+    .classes-intro {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+}
+
+/* Store Gallery */
+.store-gallery {
+    margin-bottom: 3rem;
+}
+
+.slider-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    position: relative;
+}
+
+.store-image {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.image-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    padding: 1rem;
+    margin: 0;
+    text-align: center;
+}
+
+/* Slider Buttons */
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.7);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #333;
+    transition: background-color 0.3s;
+}
+
+.slider-btn:hover {
+    background: rgba(255,255,255,0.9);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Slider Dots */
+.slider-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background: rgba(255,255,255,0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .store-image {
+        height: 300px;
+    }
+
+    .slider-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 1.2rem;
+    }
+}
+
+/* Info Grid */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.info-item {
+    background: #fff5f5;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.info-item h3 {
+    color: #ff6b6b;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.info-item p {
+    margin: 0.5rem 0;
+}
+
+/* Logo Styles */
+.logo-img-small {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    vertical-align: middle;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+.logo-img-large {
+    display: block;
+    margin: 0 auto 2rem auto;
+    height: 160px;
+    width: 160px;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+}
+
+@media (max-width: 768px) {
+    .logo-img-large {
+        height: 100px;
+        width: 100px;
+        margin-bottom: 1.2rem;
+    }
+    .logo-img-small {
+        height: 28px;
+        width: 28px;
+        margin-right: 6px;
+    }
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin: 3rem 0 2rem 0;
+    color: #ff6b6b;
+}
+
+/* 관리자 버튼 스타일 */
+.admin-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.admin-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* 관리자 모달 스타일 */
+.admin-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    backdrop-filter: blur(5px);
+}
+
+.admin-modal-content {
+    background: white;
+    margin: 15% auto;
+    padding: 2rem;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.admin-close {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.admin-close:hover {
+    color: #ff6b6b;
+}
+
+.admin-modal-content h2 {
+    text-align: center;
+    color: #ff6b6b;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.admin-login-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.admin-login-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+    .admin-modal-content {
+        margin: 20% auto;
+        padding: 1.5rem;
+        width: 95%;
+    }
+    
+    .admin-btn {
+        font-size: 0.7rem;
+        padding: 6px 12px;
+    }
+} 
+
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: row !important;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .nav-container {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0.5rem 1rem;
+    }
+}
+
+/* 상단바 스크롤 시 숨김 효과 */
+.navbar.hide {
+    transform: translateY(-100%);
+    transition: transform 0.3s;
+}
+.navbar {
+    transition: transform 0.3s;
+} 
